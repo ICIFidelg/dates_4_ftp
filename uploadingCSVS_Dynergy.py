@@ -31,7 +31,7 @@ def CreateCSVs(date2TryE,date2TryW,date2TryG,file2Try):
 	return fileCopied
 	
 def uploadTheFile(file2Upload,date2Confirm):
-	db.query("SELECT * FROM ftpReports WHERE count=(SELECT MAX(count) FROM ftpReports)")
+	db.query("SELECT * FROM ftpReports")
 	r=db.store_result()
 	serverArray=r.fetch_row(0,1)
 	ftpServer=serverArray[0]["ftpServer"]
